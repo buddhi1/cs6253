@@ -237,7 +237,8 @@ sup {
 
 a {
   color: #1D809F;
-  text-decoration: underline;
+  text-decoration: none;
+  font-weight: 500;
 }
 a:hover {
   color: #17667f;
@@ -3022,7 +3023,7 @@ textarea.form-control-lg {
 }
 .btn-check:focus + .btn, .btn:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(29, 128, 159, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(162, 163, 163, 0.25);
 }
 .btn:disabled, .btn.disabled, fieldset:disabled .btn {
   pointer-events: none;
@@ -5077,6 +5078,17 @@ textarea.form-control-lg {
 .list-group-numbered > li::before {
   content: counters(section, ".") ". ";
   counter-increment: section;
+}
+
+#bib ol {
+  counter-reset: list;
+}
+#bib ol > li {
+  list-style: none;
+}
+#bib li:before {
+  content:"[" counter(list) "] ";
+  counter-increment: list;
 }
 
 .list-group-item-action {
@@ -11303,17 +11315,19 @@ html {
 }
 
 .content-section {
-  padding-top: 7.5rem;
-  padding-bottom: 7.5rem;
+  /* padding-top: 7.5rem;
+  padding-bottom: 7.5rem; */
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 .content-section-heading h2, .content-section-heading .h2 {
   font-size: 3rem;
 }
-.content-section-heading h3, .content-section-heading .h3 {
+/* .content-section-heading h3, .content-section-heading .h3 {
   font-size: 1rem;
   text-transform: uppercase;
-}
+} */
 
 .text-faded {
   color: rgba(255, 255, 255, 0.7);

@@ -40,17 +40,56 @@
         <section class="content-section bg-light" id="paper">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading">
-                    <h2 class="mb-5">
+                    <h2 class="mb-5 text-center">
                         Heterogeneous Parallel and Distributed Computing for Efficient Geometric Computations over Big Spatiotemporal Datasets: A Survey
                     </h2>
                     <p class="lead mb-5 text-justify">
-                        Space and time are two significant aspects of data objects from domains such as geographic information science, social science, neuroscience, epidemiology, meteorology, transportation, and criminology [1]. 
-                        These data are collected using a variety of sensors and devices such as weather-capturing remote sensors, ground and ocean sensors, traffic cameras and sensors, medical imaging devices, handheld devices and social media, and simulation data. 
-                        Data collections for past decades have large volumes of spatiotemporal data 
-                        
-                        Currently, large volumes of such spatiotemporal data are available in different domains. These data require models, analyses, and mining tools to be used to understand and provide meaningful information. Spatial and time aspects of this data make relational databases and approaches based on them inefficient and in some cases incompatible. To manage spatiotemporal data and its properties, data structures and algorithms have been introduced in the past decades to mitigate the challenges and perform the computations efficiently. 
-                        
-                        In this work, we focus on operations involved in geographic information systems and discuss state-of-the-art algorithms and data structures used to efficiently perform different computations.  
+                        Space and time are two significant aspects of data objects
+                        from domains such as geographic information science, social
+                        science, neuroscience, epidemiology, meteorology, transportation, and criminology. These data are collected using a variety of sensors and devices such as weather-capturing remote
+                        sensors, ground and ocean sensors, traffic cameras and sensors,
+                        medical imaging devices, handheld devices and social media,
+                        and simulation data. 
+                    </p>
+                    <p>
+                        Currently, large volumes of such spatiotemporal data are
+                        available in different domains. These data require models,
+                        analyses, and mining tools to be used to understand and
+                        provide meaningful information. Spatial and time aspects of
+                        this data make relational databases and approaches based
+                        on them inefficient and sometimes incompatible. To manage
+                        spatiotemporal data and its properties, data structures and
+                        algorithms have been introduced in the past decades to mitigate
+                        the challenges and perform the computations efficiently.
+                    </p>
+                    <p>
+                        In this work, we focus on geometric operations used in
+                        geographic information systems (GIS). we propose to discuss
+                        efficient computations unique to spatial and spatiotemporal
+                        data, state-of-the-art algorithms, and data structures that run
+                        on various parallel computing platforms.
+                    </p>
+                    <p>
+                        The datasets used in this domain can be categorized into
+                        two types: spatial and spatiotemporal datasets. Spatial data
+                        contains the location information of an object(s) associated
+                        with other feature information. Spatiotemporal data has the
+                        location information of an object(s) associated with a time
+                        stamp and other feature information. Traditional relational
+                        database systems cannot facilitate the compute-intensive operations performed on these types of datasets. This is due to the high volume of data and the different relationships
+                        between these data objects. There are efficient data structures
+                        that are suitable for handling large volumes of spatial and
+                        spatiotemporal data preserving space and time characteristics
+                        (see Table I). Useful operations used in GIS systems are
+                        geometric operations (intersection, union, and set difference),
+                        polygon clipping, polygon overlay, spatial join, clustering
+                        similar trajectories and polygons, nearest neighbor search,
+                        etc. We propose to survey further on these data types and
+                        parallel algorithms that use novel data structures to efficiently
+                        perform different computations to mine useful information.
+                        This work is going to be beneficial to geographic information
+                        science communities and GIS data-related parallel computing
+                        researchers to learn novel algorithms and their usage.
                     </p>
                 </div>
             </div>
@@ -59,11 +98,10 @@
         <section class="content-section bg-light" id="bib">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading">
-                    <h2 class="mb-5">Bibliography</h2>
+                    <h3 class="mb-5">References</h3>
                     <ol>
-                        <li>
-                            G. Atluri, A. Karpatne, and V. Kumar, “Spatio-temporal data mining: A survey of problems and methods,” ACM Computing Surveys (CSUR), vol. 51, no. 4, pp. 1–41, 2018.
-                        </li>
+                        <li id="r1">G. Atluri, A. Karpatne, and V. Kumar, “Spatio-temporal data mining: A survey of problems and methods,” ACM Computing Surveys (CSUR), vol. 51, no. 4, pp. 1–41, 2018.</li>
+                        <!-- <li></li> -->
                     </ol>
                 </div>
             </div>
