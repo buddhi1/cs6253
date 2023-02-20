@@ -45,52 +45,56 @@
                     </h2>
                     <p class="lead mb-5 text-justify">
                         Space and time are two significant aspects of data objects
-                        from domains such as geographic information science, social
-                        science, neuroscience, epidemiology, meteorology, transportation, and criminology. These data are collected using a variety of sensors and devices such as weather-capturing remote
+                        from domains such as geographical information science, social
+                        science, neuroscience, epidemiology, meteorology, transportation, and criminology. These data are collected using a variety
+                        of sensors and devices such as weather-capturing remote
                         sensors, ground and ocean sensors, traffic cameras and sensors,
                         medical imaging devices, handheld devices and social media,
-                        and simulation data. 
+                        and simulations.
                     </p>
                     <p class="lead mb-5 text-justify">
-                        Currently, large volumes of such spatiotemporal data are
-                        available in different domains. These data require models,
-                        analyses, and mining tools to be used to understand and
-                        provide meaningful information. Spatial and time aspects of
-                        this data make relational databases and approaches based
-                        on them inefficient and sometimes incompatible. To manage
-                        spatiotemporal data and its properties, data structures and
-                        algorithms have been introduced in the past decades to mitigate
-                        the challenges and perform the computations efficiently.
+                        This study focuses on parallel algorithms used for efficient
+                        geospatial analysis using large volumes of data. Spatial and
+                        spatiotemporal data models and operations are the building
+                        blocks of spatial analysis [<a href="#r1">1</a>]. Traditional relational database
+                        systems cannot efficiently handle this kind of data due to the
+                        high compute-intensive operations, high volume of data, and
+                        the different relationships among data objects. To mitigate
+                        these limitations, efficient data models, and parallel algorithms
+                        that can harness high-performance computing has been introduced.
                     </p>
                     <p class="lead mb-5 text-justify">
-                        In this work, we focus on geometric operations used in
-                        geographic information systems (GIS). we propose to discuss
-                        efficient computations unique to spatial and spatiotemporal
-                        data, state-of-the-art algorithms, and data structures that run
-                        on various parallel computing platforms.
+                        There are different data models used in geospatial analysis
+                        such as vectors and attributes, point clouds, raster and satellite
+                        imagery, census data, cell phone data, drawn images, and
+                        social media data [<a href="#r1">1</a>], [<a href="#r2">1</a>]. These data models have different
+                        characteristics and there are different operations performed on
+                        them to exploit useful information.
                     </p>
                     <p class="lead mb-5 text-justify">
-                        The datasets used in this domain can be categorized into
-                        two types: spatial and spatiotemporal datasets. Spatial data
-                        contains the location information of an object(s) associated
-                        with other feature information. Spatiotemporal data has the
-                        location information of an object(s) associated with a time
-                        stamp and other feature information. Traditional relational
-                        database systems cannot facilitate the compute-intensive operations performed on these types of datasets. This is due to the high volume of data and the different relationships
-                        between these data objects. There are efficient data structures
-                        that are suitable for handling large volumes of spatial and
-                        spatiotemporal data preserving space and time characteristics
-                        (see Table I). Useful operations used in GIS systems are
-                        geometric operations (intersection, union, and set difference),
-                        polygon clipping, polygon overlay, spatial join, clustering
-                        similar trajectories and polygons, nearest neighbor search,
-                        etc. We propose to survey further on these data types and
-                        parallel algorithms that use novel data structures to efficiently
-                        perform different computations to mine useful information.
-                        This work is going to be beneficial to geographic information
-                        science communities and GIS data-related parallel computing
-                        researchers to learn novel algorithms and their usage.
+                        This survey discusses parallel algorithms used for geometric
+                        and related operations on geospatial vector data. Vector data
+                        has location information of points or collections of points in
+                        the form of lines and polygons. Geometric operations (intersection, union, and difference), spatial join, and overlay are
+                        key basic operations that are frequently used and important for
+                        many other operations. To handle large volumes of such data
+                        and to perform these operations efficiently parallel processing
+                        has been introduced by harnessing computing from multi-core,
+                        heterogenous, and distributed parallel hardware platforms.
                     </p>
+                    <p class="lead mb-5 text-justify">
+                        In this work, we propose an extensive literature survey on
+                        parallel algorithms used for geometric and related operations
+                        in geospatial vector data. This study proposes to survey stateof-the-art parallel and scalable algorithms which can harness
+                        the computing of different hardware platforms handling large
+                        volumes of data.
+                    </p>
+                    <p class="lead mb-5 text-justify">
+                        Table <a href="#t1">I</a> shows an overview of the proposed survey and
+                        related topics. This survey is beneficial to geographic information science communities and GIS data-related parallel
+                        computing researchers to learn novel algorithms and their
+                        usage. 
+                    </p>                       
                 </div>
             </div>
         </section>
@@ -100,8 +104,8 @@
                 <div class="content-section-heading">
                     <h3 class="mb-5">References</h3>
                     <ol>
-                        <li id="r1">G. Atluri, A. Karpatne, and V. Kumar, “Spatio-temporal data mining: A survey of problems and methods,” ACM Computing Surveys (CSUR), vol. 51, no. 4, pp. 1–41, 2018.</li>
-                        <!-- <li></li> -->
+                        <li id="r1">M. J. De Smith, M. F. Goodchild, and P. Longley, Geospatial analysis: a comprehensive guide to principles, techniques and software tools. Troubador publishing ltd, 2018.</li>
+                        <li id="r2">“What is geospatial data?” [Online]. Available: https://www.ibm.com/topics/geospatial-data</li>
                     </ol>
                 </div>
             </div>
