@@ -11381,7 +11381,8 @@ html {
   display: block;
   text-decoration: none;
   color: #fff;
-  padding: 15px;
+  /* padding: 15px; */
+  padding: 10px;
 }
 
 .sidebar-nav li a:hover {
@@ -11594,4 +11595,30 @@ footer.footer .social-link:hover {
   line-height: 7.5rem;
   font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.menu{
+  list-style: none;
+  padding-left: 0px;
+  transition: 0.5s linear;
+}
+.sub-list {
+  /* padding-left: 0px; */
+  transition: 0.5s linear;
+}
+.sub-list li a{
+  background-color: #0c4128;
+}
+
+#pclip-list {
+  /* max-height: 0; */
+  /* overflow: hidden; */
+  display: block;
+}
+
+a:focus+#pclip-list {
+  max-height: 15em;
+}
+/* only select that link , here using the href attribute */
+a[href="parallelClip"]:focus {
+  pointer-events: none;
 }

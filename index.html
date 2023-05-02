@@ -27,18 +27,37 @@
                 <li class="sidebar-brand"><a href="#page-top">Survey Paper</a></li>
                 <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
                 <li class="sidebar-nav-item"><a href="#intro">Introduction</a></li>
+                <li class="sidebar-nav-item"><a href="#serialClip">Serial polygon clipping and overlay algorithms</a></li>
                 <li class="sidebar-nav-item">
-                    <a href="#serialClip">Serial polygon clipping and overlay algorithms</a>
-                    <ul>
-                        <li class="sidebar-nav-item"><a href="">All-to-all edge pair based polygon clipping algorithms</a></li>
-                        <li class="sidebar-nav-item"><a href="">Plane-sweep based polygon clipping algorithms</a></li>
-                        <li class="sidebar-nav-item"><a href="">Raster based polygon clipping algorithms</a></li>
-                        <li class="sidebar-nav-item"><a href="">Optimizations for polygon clipping and overlay</a></li>
-                        <li class="sidebar-nav-item"><a href=""> Parallel data structures useful in spatial data analysis</a></li>
-                    </ul>
+                    <a href="#parallelClip">Parallel polygon clipping and overlay algorithms</a>
+                    <!-- <ul class="menu sub-list" id="pclip-list">
+                        <li class="sidebar-nav-item"><a href="#sc1">All-to-all edge pair based polygon clipping algorithms</a></li>
+                        <li class="sidebar-nav-item"><a href="#sc2">Plane-sweep based polygon clipping algorithms</a></li>
+                        <li class="sidebar-nav-item"><a href="#sc3">Raster based polygon clipping algorithms</a></li>
+                        <li class="sidebar-nav-item"><a href="#sc4">Optimizations for polygon clipping and overlay</a></li>
+                        <li class="sidebar-nav-item"><a href="#sc5"> Parallel data structures useful in spatial data analysis</a></li>
+                    </ul> -->
                 </li>
-                <li class="sidebar-nav-item"><a href="#parallelClip">Parallel polygon clipping and overlay algorithms</a></li>
-                <li class="sidebar-nav-item"><a href="#std">Spatiotemporal data</a></li>
+                <li class="sidebar-nav-item">
+                    <a href="#std">Spatiotemporal data</a>
+                    <!-- <ul class="menu sub-list">
+                        <li class="sidebar-nav-item"><a href="#sd1">Data structures</a></li>
+                        <li class="sidebar-nav-item">
+                            <a href="#sd2">Scalable solutions</a>
+                            <ul class="menu">
+                                <li class="sidebar-nav-item"><a href="#ss1">Database based approach</a></li>
+                                <li class="sidebar-nav-item"><a href="#ss2">Grid based approach</a></li>
+                                <li class="sidebar-nav-item"><a href="#ss3">Grid with B-tree approach</a></li>
+                                <li class="sidebar-nav-item"><a href="#ss4">Indexing based approach</a></li>
+                                <li class="sidebar-nav-item"><a href="#ss5">Cloud computing based systems</a></li>
+                                <li class="sidebar-nav-item"><a href="#ss6">Other scalable systems</a></li>
+                                <li class="sidebar-nav-item"><a href="#ss7">Future retrievals</a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-nav-item"><a href="#sd3">Uncertainty in spatiotemporal data</a></li>
+                    </ul> -->
+                </li>
+                <li class="sidebar-nav-item"><a href="#orp">Open Research Problems</a></li>
                 <li class="sidebar-nav-item"><a href="#ref">References</a></li>
             </ul>
         </nav>
@@ -177,7 +196,7 @@
                         analyzed, and combined with traditional business data [2].
                     </p>
                     
-                    <h5 class="mb-4">Common data types:</h5>
+                    <h5 class="mb-2">Common data types:</h5>
                     <p class="lead mb-3 text-justify">
                         Geospatial data can be categorized
                         into two major categories: spatial data and spatiotemporal data.
@@ -188,31 +207,31 @@
                         data formats used to store these types of data.
                         <ol>
                             <li>
-                                <p><span>Vector and attributes:</span> Location descriptions in the
+                                <p class="lead mb-3 text-justify"><span class="fw-bold">Vector and attributes:</span> Location descriptions in the
                                 forms of points, polylines, and polygons.</p>
                             </li>
                             <li>
-                                <p><span>Raster and satellite imagery:</span> High-resolution images
+                                <p class="lead mb-3 text-justify"><span class="fw-bold">Raster and satellite imagery:</span> High-resolution images
                                     taken by orbiting satellites.</p>
                             </li>
                             <li>
-                                <p><span>Point clouds:</span>Collections of points in higher dimensional space encoding additional data such as elevation,
+                                <p class="lead mb-3 text-justify"><span class="fw-bold">Point clouds:</span> Collections of points in higher dimensional space encoding additional data such as elevation,
                                     and color.</p>
                             </li>
                             <li>
-                                <p><span>Census data:</span> Census data connected to geographic
+                                <p class="lead mb-3 text-justify"><span class="fw-bold">Census data:</span> Census data connected to geographic
                                     locations or regions.</p>
                             </li>
                             <li>
-                                <p><span>Cell phone data:</span> Location and other data from cell
+                                <p class="lead mb-3 text-justify"><span class="fw-bold">Cell phone data:</span> Location and other data from cell
                                     phone call routes.</p>
                             </li>
                             <li>
-                                <p><span> Drawn images:</span> CAD images of man-made buildings
+                                <p class="lead mb-3 text-justify"><span class="fw-bold"> Drawn images:</span> CAD images of man-made buildings
                                     and structures.</p>
                             </li>
                             <li>
-                                <p><span>Social media data:</span> Social media posts and videos that
+                                <p class="lead mb-3 text-justify"><span class="fw-bold">Social media data:</span> Social media posts and videos that
                                     are used to identify emerging trends.</p>
                             </li>
                         </ol>
@@ -273,7 +292,7 @@
                     </p>
 
                     <h3 class="mb-4" id="parallelClip">3. Parallel Polygon Clipping and Overlay Algorithms</h3>
-                    <h4 class="mb-4">A. All-to-all Edge Pair Based Polygon Clipping Algorithms</h4>
+                    <h4 class="mb-4" id="sc1">A. All-to-all Edge Pair Based Polygon Clipping Algorithms</h4>
                     <p class="lead mb-3 text-justify">
                         Puri et al. [31] present two key findings. 1) the GreinerHormann algorithm has been successfully parallelized, which
                         can perform polygon clipping in O(logn) time using O(n+k)
@@ -297,7 +316,7 @@
                         and final target polygon filtering. The experimental results
                         demonstrate the high efficiency of this work.
                     </p>
-                    <h4 class="mb-4">B. Plane-sweep Based Polygon Clipping Algorithms</h4>
+                    <h4 class="mb-4" id="sc2">B. Plane-sweep Based Polygon Clipping Algorithms</h4>
                     <p class="lead mb-3 text-justify">
                         Puri et al [30] presents an algorithm that can perform
                         polygon clipping in O(logn) time using (n+k+k') processors.
@@ -319,7 +338,7 @@
                         40 times the speed of the sequential CGAL library for the line
                         segment intersection problem with 40K and 80K data sets.
                     </p>
-                    <h4 class="mb-4">C. Raster Based Polygon Clipping Algorithms</h4>
+                    <h4 class="mb-4" id="sc3">C. Raster Based Polygon Clipping Algorithms</h4>
                     <p class="lead mb-3 text-justify">
                         Zhou et al [35] introduced boundary algebra filling to
                         rasterize input polygons and detect intersections in raster cells.
@@ -359,7 +378,7 @@
                     </p>
                     <img src="assets/img/summary_table2.png" alt="Table I" style="width: 50%; display: block; margin-left: auto; margin-right: auto;" />                     
                     
-                    <h4 class="mb-4">D. Optimizations for Polygon Clipping and Overlay</h4>
+                    <h4 class="mb-4" id="sc4">D. Optimizations for Polygon Clipping and Overlay</h4>
                     <p class="lead mb-3 text-justify">                        
                         Liu et al. [38] introduce a new geospatial filter called
                         PolySketch-based CMBR (PSCMBR) filter. This filter uses
@@ -370,7 +389,7 @@
                         The new filters have been implemented on GPU using CUDA,
                         resulting in a processing rate of 61 million/sec on average,
                         making them more efficient than existing filters.
-                    <h4 class="mb-4">E. Parallel Data Structures Useful in Spatial Data Analysis</h4>
+                    <h4 class="mb-4" id="sc5">E. Parallel Data Structures Useful in Spatial Data Analysis</h4>
                     </p>
                     <p class="lead mb-3 text-justify">                        
                         B-Tree performs better than the state-of-the-art, including a
@@ -409,7 +428,7 @@
                     </p>
 
                     <h3 class="mb-4" id="std">4. Spatiotemporal Data</h3>
-                    <h4 class="mb-4">A. Data Structures</h4>
+                    <h4 class="mb-4" id="sd1">A. Data Structures</h4>
                     <p class="lead mb-3 text-justify">                        
                         The G-tree data structure combines features of grids and Btrees. It's designed for organizing multidimensional data and
                         is efficient in dynamic data spaces with a high frequency of
@@ -486,8 +505,8 @@
                         and improve the performance of indexing moving objects in
                         flash storage [49].
                     </p>
-                    <h4 class="mb-4">B. Scalable Solutions</h4>
-                    <h5 class="mb-4">1) Database Based Approach:</h5>
+                    <h4 class="mb-4" id="sd2">B. Scalable Solutions</h4>
+                    <h5 class="mb-4"  id="ss1">1) Database Based Approach:</h5>
                     <p class="lead mb-3 text-justify"> 
                         Time-parameterized queries
                         (TP queries) are queries that retrieve the actual result at the
@@ -528,7 +547,7 @@
                         The metrics are applied to a case study of a wildfire in
                         northwestern Montana, showcasing the utility of the approach.
                     </p>
-                    <h5 class="mb-4">2) Grid Based Approach:</h5> 
+                    <h5 class="mb-4"  id="ss2">2) Grid Based Approach:</h5> 
                     <p class="lead mb-3 text-justify"> 
                         Xia et al. [54] propose a parallel
                         Grid-Search-based Support Vector Machine (GS-SVM) optimization algorithm on Spark to predict passenger hotspots.
@@ -539,7 +558,7 @@
                         to predict passenger hotspots and outperforms several state-ofthe-art algorithms, including ARIMA, SVR, LSTM, and CNN,
                         with a lower MAPE value of at least 78.4%.
                     </p>
-                    <h5 class="mb-4">3) Grid with B-tree Approach: </h5>
+                    <h5 class="mb-4"  id="ss3">3) Grid with B-tree Approach: </h5>
                     <p class="lead mb-3 text-justify"> 
                         Jung et al. [55] propose a
                         new index that combines TPR*-tree and hash map to quickly
@@ -552,7 +571,7 @@
                         experiments and is proven to perform well in updating and
                         querying target objects in real time.
                     </p>
-                    <h5 class="mb-4">4) Indexing Based Approach:</h5> 
+                    <h5 class="mb-4"  id="ss4">4) Indexing Based Approach:</h5> 
                     <p class="lead mb-3 text-justify">
                         Teng et al. [56] propose a
                         real-time contact tracing system to deal with the challenges of
@@ -575,7 +594,7 @@
                         The proposed solution outperforms traditional approaches by
                         almost two orders of magnitude in experimental evaluations.
                     </p>
-                    <h5 class="mb-4">5) Cloud Computing Based Systems: </h5>
+                    <h5 class="mb-4"  id="ss5">5) Cloud Computing Based Systems: </h5>
                     <p class="lead mb-3 text-justify">
                         To support the increasing demand for data storage, Big Data requires horizontally scalable data stores. This need led to the development
                         of various NoSQL databases, each with distinct query and
@@ -586,7 +605,7 @@
                         the horizontal scalability of NoSQL databases. Performance
                         data obtained from testing with Accumulo is presented [57].
                     </p>
-                    <h5 class="mb-4">6) Other Scalable Systems: </h5>
+                    <h5 class="mb-4"  id="ss6">6) Other Scalable Systems: </h5>
                     <p class="lead mb-3 text-justify">
                         Large amounts of data on taxi
                         trajectories can be quickly collected using advanced positioning and communication technologies. However, handling such
@@ -600,11 +619,11 @@
                         analytical functions are currently being developed [58].
                         Parallel Spatial Query Processing on GPUs Using RTrees [59]
                     </p>
-                    <h5 class="mb-4">7) Future retrievals: </h5>
+                    <h5 class="mb-4"  id="ss7">7) Future retrievals: </h5>
                     <p class="lead mb-3 text-justify">
                         Exploring Spatial Indexing for Accelerated Feature Retrieval in HPC [60]
                     </p>
-                    <h4 class="mb-4">C. Uncertainty in Spatiotemporal Data</h4>
+                    <h4 class="mb-4"  id="#sd1">C. Uncertainty in Spatiotemporal Data</h4>
                     <p class="lead mb-3 text-justify">
                         Saltenis et al. [61] propose a new indexing technique based
                         on R-tree. This technique supports efficient querying of the
@@ -639,7 +658,7 @@
                         potential. The paper also includes examples of interesting
                         spatiotemporal queries on uncertain data.
                     </p>
-                    <h3 class="mb-4">5. Open Research Problems</h3>
+                    <h3 class="mb-4" id="orp">5. Open Research Problems</h3>
                     <p class="lead mb-3 text-justify">
                         Plane-sweep sequential polygon clipping algorithms run in
                         O((n+k)logn) time. There are multi-core implementations of
@@ -667,7 +686,7 @@
         <section class="content-section bg-light" id="ref">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading">
-                    <h3 class="mb-4">References</h3>
+                    <h3 class="mb-4">6. References</h3>
                     <ol>
                         <li id="r1">M. J. De Smith, M. F. Goodchild, and P. Longley, <a href="https://spatialanalysisonline.com/HTML/">Geospatial analysis: a comprehensive guide to principles, techniques and software tools.</a> Troubador publishing ltd, 2018.
                         </li><li id="r2">“What is geospatial data?” [Online]. Available: <a href="https://www.ibm.com/topics/geospatial-data">https://www.ibm.com/topics/geospatial-data</a>
