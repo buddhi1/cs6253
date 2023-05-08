@@ -292,7 +292,19 @@
                     </p>
 
                     <h3 class="mb-4" id="parallelClip">3. Parallel Polygon Clipping and Overlay Algorithms</h3>
+                    <img src="assets/img/spatialHierarchy.png" alt="all-to-all polygon clipping" style="width: 50%; display: block; margin-left: auto; margin-right: auto;" />                     
+
                     <h4 class="mb-4" id="sc1">A. All-to-all Edge Pair Based Polygon Clipping Algorithms</h4>
+                    <img src="assets/img/alltoall.png" alt="all-to-all polygon clipping" style="width: 70%; display: block; margin-left: auto; margin-right: auto;" />                     
+
+                    <p class="lead mb-3 text-justify">
+                        This is a naive approach to clip two arbitrary polygons. The major phases in this approach are: finding intersections,
+                        labeling them, and tracing the resulting polygon where the dominating phase is intersection finding [11, 15, 39]. In the
+                        intersection-finding phase, all edge pairs of the subject and clipping polygons are tested against each other to find the
+                        intersections. This step runs in O(n2) time, where n is the number of edges in the input polygons. Labeling can vary
+                        depending on the algorithm and the tracing phase uses the labels the evaluate the edges of the input polygons to consider them in the result (see Fig. 3). The rules defined in the tracing phase yield the geometric operations: intersection, union,
+                        and set difference [11, 15, 38, 39].
+                    </p>
                     <p class="lead mb-3 text-justify">
                         Puri et al. [31] present two key findings. 1) the GreinerHormann algorithm has been successfully parallelized, which
                         can perform polygon clipping in O(logn) time using O(n+k)
@@ -317,6 +329,15 @@
                         demonstrate the high efficiency of this work.
                     </p>
                     <h4 class="mb-4" id="sc2">B. Plane-sweep Based Polygon Clipping Algorithms</h4>
+                    <img src="assets/img/planesweepmerge.png" alt="all-to-all polygon clipping" style="width: 50%; display: block; margin-left: auto; margin-right: auto;" />                     
+
+                    <p class="lead mb-3 text-justify">
+                        Serial plane-sweep approach can clip a pair of arbitrary polygons in O((𝑛 +𝑘) log 𝑛) time. This approach exhibits better
+                        time complexity than the previous all-to-all edge comparison method. But parallelizing the phases in this approach is
+                        more challenging and requires parallel data structures [38]. [38] presents a multi-core implementation of this approach.
+                        [34] presents a GPU parallelized method for line segment intersection. But there is no GPU parallel algorithm based on
+                        this approach.
+                    </p>
                     <p class="lead mb-3 text-justify">
                         Puri et al [30] presents an algorithm that can perform
                         polygon clipping in O(logn) time using (n+k+k') processors.
@@ -339,6 +360,8 @@
                         segment intersection problem with 40K and 80K data sets.
                     </p>
                     <h4 class="mb-4" id="sc3">C. Raster Based Polygon Clipping Algorithms</h4>
+                    <img src="assets/img/raster.png" alt="all-to-all polygon clipping" style="width: 70%; display: block; margin-left: auto; margin-right: auto;" />                     
+
                     <p class="lead mb-3 text-justify">
                         Zhou et al [35] introduced boundary algebra filling to
                         rasterize input polygons and detect intersections in raster cells.
@@ -428,6 +451,8 @@
                     </p>
 
                     <h3 class="mb-4" id="std">4. Spatiotemporal Data</h3>
+                    <img src="assets/img/stHierarchy.png" alt="all-to-all polygon clipping" style="width: 50%; display: block; margin-left: auto; margin-right: auto;" />                     
+
                     <h4 class="mb-4" id="sd1">A. Data Structures</h4>
                     <p class="lead mb-3 text-justify">                        
                         The G-tree data structure combines features of grids and Btrees. It's designed for organizing multidimensional data and
@@ -616,13 +641,15 @@
                         has proven to be effective in facilitating the processing and
                         analysis of such data. XStar has already been downloaded
                         over 4000 times since its release in January 2019 and new
-                        analytical functions are currently being developed [58].
-                        Parallel Spatial Query Processing on GPUs Using RTrees [59]
+                        analytical functions are currently being developed [58].                       
                     </p>
-                    <h5 class="mb-4"  id="ss7">7) Future retrievals: </h5>
+                    <!-- <p>
+                        Parallel Spatial Query Processing on GPUs Using RTrees [59]
+                    </p> -->
+                    <!-- <h5 class="mb-4"  id="ss7">7) Future retrievals: </h5>
                     <p class="lead mb-3 text-justify">
                         Exploring Spatial Indexing for Accelerated Feature Retrieval in HPC [60]
-                    </p>
+                    </p> -->
                     <h4 class="mb-4"  id="#sd1">C. Uncertainty in Spatiotemporal Data</h4>
                     <p class="lead mb-3 text-justify">
                         Saltenis et al. [61] propose a new indexing technique based
@@ -746,11 +773,11 @@
                         </li><li id="r56"> D. Teng, A. Nehe, P. Emanuel, F. Baig, J. Kong, and F. Wang, "Gpu-based real-time contact tracing at scale," in Proceedings of the 29th International Conference on Advances in Geographic Information Systems, 2021, pp. 1–10.
                         </li><li id="r57"> A. Fox, C. Eichelberger, J. Hughes, and S. Lyon, "Spatio-temporal indexing in non-relational distributed databases," in 2013 IEEE International Conference on Big Data. IEEE, 2013, pp. 291–299. 
                         </li><li id="r58"> X. Li, J. Mango, J. Song, and D. Zhang, "Xstar: a software system for handling taxi trajectory big data," Computational Urban Science, vol. 1, pp. 1–13, 2021.
-                        </li><li id="r59"> S. You, J. Zhang, and L. Gruenwald, "Parallel spatial query processing on gpus using r-trees," in Proceedings of the 2Nd ACM SIGSPATIAL international workshop on analytics for big geospatial data, 2013, pp. 23–31.
-                        </li><li id="r60"> M. Lawson, W. Gropp, and J. Lofstead, "Exploring spatial indexing for accelerated feature retrieval in hpc," in 2022 22nd IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid). IEEE, 2022, pp. 605–614. 
-                        </li><li id="r61"> S. Saltenis, C. S. Jensen, S. T. Leutenegger, and M. A. Lopez, "Indexing the positions of continuously moving objects," in Proceedings of the 2000 ACM SIGMOD international conference on Management of data, 2000, pp. 331–342.
-                        </li><li id="r62"> Y. Lou, C. Zhang, Y. Zheng, X. Xie, W. Wang, and Y. Huang, "Mapmatching for low-sampling-rate gps trajectories," in Proceedings of the 17th ACM SIGSPATIAL international conference on advances in geographic information systems, 2009, pp. 352–361.
-                        </li><li id="r63"> T. Bernecker, T. Emrich, H.-P. Kriegel, A. Zuefle, L. Chen, X. Lian, and N. Mamoulis, “Managing uncertain spatio-temporal data,” in Proceedings of the 2nd ACM SIGSPATIAL International Workshop on Querying and Mining Uncertain Spatio-Temporal Data, 2011, pp. 16–20.
+                        <!-- </li><li id="r59"> S. You, J. Zhang, and L. Gruenwald, "Parallel spatial query processing on gpus using r-trees," in Proceedings of the 2Nd ACM SIGSPATIAL international workshop on analytics for big geospatial data, 2013, pp. 23–31. -->
+                        <!-- </li><li id="r60"> M. Lawson, W. Gropp, and J. Lofstead, "Exploring spatial indexing for accelerated feature retrieval in hpc," in 2022 22nd IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid). IEEE, 2022, pp. 605–614.  -->
+                        </li><li id="r59"> S. Saltenis, C. S. Jensen, S. T. Leutenegger, and M. A. Lopez, "Indexing the positions of continuously moving objects," in Proceedings of the 2000 ACM SIGMOD international conference on Management of data, 2000, pp. 331–342.
+                        </li><li id="r60"> Y. Lou, C. Zhang, Y. Zheng, X. Xie, W. Wang, and Y. Huang, "Mapmatching for low-sampling-rate gps trajectories," in Proceedings of the 17th ACM SIGSPATIAL international conference on advances in geographic information systems, 2009, pp. 352–361.
+                        </li><li id="r61"> T. Bernecker, T. Emrich, H.-P. Kriegel, A. Zuefle, L. Chen, X. Lian, and N. Mamoulis, “Managing uncertain spatio-temporal data,” in Proceedings of the 2nd ACM SIGSPATIAL International Workshop on Querying and Mining Uncertain Spatio-Temporal Data, 2011, pp. 16–20.
                         
                         <!-- </li><li id="r31"> B.-O. Schneider and J. van Welzen, "Efficient polygon clipping for an simd graphics pipeline," IEEE Transactions on Visualization and Computer Graphics, vol. 4, no. 3, pp. 272–285, 1998.
                         </li><li id="r32"> V. Skala, "A new line clipping algorithm with hardware acceleration," in Proceedings Computer Graphics International, 2004. IEEE, 2004, pp. 270–273.
